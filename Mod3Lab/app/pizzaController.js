@@ -7,11 +7,14 @@ app.controller('pizzaController', [
 			'Olives', 'Green Peppers']
 			,
 			toppings: []
+			,
+			message: false
 
          };
 
          $scope.addTopping = function(topping){
          	$scope.model.toppings.push(topping);
+         	$scope.model.message = true;
          	$scope.model.search = null;
          }
     }

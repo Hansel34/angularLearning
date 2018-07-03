@@ -22,9 +22,16 @@
 
         <div ng-show="model.search" ng-repeat="t in filteredValues = model.availableToppings | filter:model.search">
             <span ng-click="addTopping(t)">{{t}}</span>
-            <div ng-show="model.search.length>0 && filteredValues===0" class="alert alert-danger">
+        </div>
+
+        <div ng-show="model.message" class="alert alert-success">
+            Topping added.
+            <input type="button" value="close" ng-click="model.message = false">
+
+        </div>
+
+        <div ng-show="model.search.length>0 && (model.availableToppings | filter:model.search).length===0" class="alert alert-danger">
             No results.
-            </div>
         </div>
 
 
